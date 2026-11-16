@@ -21,23 +21,68 @@ export interface Suggestion {
 // Common technologies people look up by "<product> <version>". Kept in sync by
 // hand; the version is supplied by the user, so only the product name matters.
 const PRODUCTS: string[] = [
+  // Languages & runtimes
   "openssl", "openssh", "php", "python", "node.js", "go", "ruby", "rust",
-  "java", "dotnet", "perl",
+  "java", "dotnet", "perl", "deno", "bun",
+  // Web servers, proxies & load balancers
   "apache", "apache tomcat", "nginx", "httpd", "iis", "haproxy", "envoy",
+  "traefik", "caddy", "lighttpd", "varnish", "jetty", "wildfly", "jboss",
+  "weblogic", "websphere", "glassfish",
+  // Databases & caches
   "mysql", "mariadb", "postgresql", "mongodb", "redis", "elasticsearch",
-  "sqlite", "oracle database", "microsoft sql server",
-  "wordpress", "drupal", "joomla", "magento",
+  "sqlite", "oracle database", "microsoft sql server", "memcached",
+  "cassandra", "couchdb", "influxdb", "opensearch", "neo4j", "clickhouse",
+  // CMS, e-commerce & forums
+  "wordpress", "drupal", "joomla", "magento", "typo3", "ghost", "strapi",
+  "craft cms", "concrete cms", "prestashop", "opencart", "woocommerce",
+  "phpbb", "mediawiki", "moodle", "dokuwiki",
+  // Backend frameworks
   "django", "laravel", "symfony", "rails", "spring", "spring boot",
-  "express", "flask", "struts",
+  "express", "flask", "struts", "fastapi", "codeigniter", "cakephp",
+  "yii", "nestjs", "koa", "fastify", "tornado", "asp.net core",
+  // Frontend libraries & frameworks
   "jquery", "jquery ui", "react", "angular", "angularjs", "vue", "bootstrap",
-  "axios", "lodash", "next.js", "webpack",
-  "log4j", "log4net", "jackson", "commons-collections",
-  "docker", "kubernetes", "containerd", "helm", "istio",
+  "axios", "lodash", "next.js", "nuxt", "svelte", "ember.js", "backbone.js",
+  "handlebars", "moment.js", "underscore", "dompurify", "socket.io",
+  "highcharts", "chart.js", "d3", "three.js",
+  // Rich-text editors
+  "ckeditor", "tinymce", "quill", "froala", "summernote", "prosemirror",
+  // Icons, fonts & UI kits
+  "font awesome", "bootstrap icons", "material ui", "semantic ui",
+  "foundation", "tailwindcss", "select2", "datatables", "swiper",
+  "lightbox", "fancybox", "slick",
+  // File handling & viewers
+  "pdf.js", "plupload", "dropzone", "jquery file upload", "elfinder",
+  "kcfinder", "imagemagick", "ghostscript", "ffmpeg", "libreoffice",
+  // Build tools & package managers
+  "webpack", "vite", "babel", "npm", "yarn", "pip", "composer", "maven",
+  "gradle",
+  // Java & .NET libraries
+  "log4j", "log4net", "jackson", "commons-collections", "commons-text",
+  "xstream", "fastjson", "snakeyaml", "hibernate", "netty", "newtonsoft.json",
+  // Containers, cloud-native & DevOps
+  "docker", "kubernetes", "containerd", "helm", "istio", "runc", "podman",
+  "rancher", "argo cd", "consul", "vault", "nomad",
   "jenkins", "gitlab", "grafana", "prometheus", "terraform", "ansible",
+  "sonarqube", "nexus repository", "artifactory", "teamcity", "bamboo",
+  "kibana", "logstash", "zabbix", "nagios", "splunk",
+  // Messaging & data
+  "kafka", "rabbitmq", "activemq", "zookeeper", "solr", "airflow", "spark",
+  // Collaboration & self-hosted apps
+  "nextcloud", "owncloud", "gitea", "confluence", "jira", "bitbucket",
+  "mattermost", "rocket.chat", "roundcube", "zimbra", "exchange server",
+  "sharepoint", "phpmyadmin", "adminer", "webmin", "cpanel",
+  // OS, system & CLI
   "curl", "wget", "git", "vim", "sudo", "bash", "glibc", "systemd",
+  "linux kernel", "polkit", "xz", "zlib", "libwebp", "libxml2",
+  // VPN, network & mail
   "openvpn", "wireguard", "strongswan", "fortios", "openfortivpn",
+  "pulse secure", "ivanti connect secure", "globalprotect", "citrix adc",
+  "pfsense", "opnsense", "cisco ios xe", "mikrotik routeros",
   "exim", "postfix", "dovecot", "bind", "unbound", "samba", "squid",
-  "jenkins", "sonarqube", "nextcloud", "owncloud", "gitea",
+  // Virtualization & remote access
+  "vmware esxi", "vcenter", "proxmox", "virtualbox", "citrix", "anydesk",
+  "teamviewer", "guacamole", "moveit transfer",
 ];
 
 // Dedupe product list while keeping order.
