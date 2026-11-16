@@ -1,0 +1,28 @@
+# KEVlar stack — drop this into Dockge/Portainer (or run `docker compose up -d`).
+#
+# NVD_API_KEY is optional but recommended (higher NVD rate limits). Set it in a
+# `.env` file next to this one, or in your stack manager's environment UI:
+#   NVD_API_KEY=your-key-here
+#
+# Option A (build from source on the server): keep `build: .` below.
+# Option B (deploy a prebuilt image): comment out `build:` and set `image:` to
+#   your registry tag, e.g. image: ghcr.io/you/kevlar:latest
+
+services:
+  kevlar:
+    build: .
+    # image: ghcr.io/you/kevlar:latest
+    container_name: kevlar
+    restart: unless-stopped
+    ports:
+      - "3000:3000" # host:container — change the host port if 3000 is taken
+    environment:
+      NODE_ENV: production
+      # Optional NVD API key — read from the stack's .env / environment.
+      NVD_API_KEY: ${NVD_API_KEY:-}
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://127.0.0.1:3000/"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s

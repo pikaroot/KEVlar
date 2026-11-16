@@ -1,0 +1,31 @@
+# Dependencies & build output (rebuilt inside the image)
+node_modules
+.next
+out
+build
+
+# Env files — never bake secrets into the image; pass NVD_API_KEY at runtime
+.env
+.env.*
+!.env.example
+
+# VCS & tooling
+.git
+.gitignore
+.github
+.vscode
+.idea
+
+# Docker
+Dockerfile
+.dockerignore
+docker-compose.yml
+
+# Docs & misc that aren't needed to build/run
+README.md
+cve_kev_finder_specification.md
+*.md
+npm-debug.log*
+.DS_Store
+*.tsbuildinfo
+next-env.d.ts

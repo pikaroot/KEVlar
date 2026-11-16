@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #09090b; /* zinc-950 */
+  background-image:
+    radial-gradient(60rem 40rem at 50% -10%, rgba(99, 102, 241, 0.08), transparent 70%),
+    radial-gradient(40rem 30rem at 90% 10%, rgba(225, 29, 72, 0.05), transparent 70%);
+  background-attachment: fixed;
+  color: #e4e4e7; /* zinc-200 */
+}
+
+/* Subtle scanline / grid texture for the offensive-security aesthetic. */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(63, 63, 70, 0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(63, 63, 70, 0.15) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+::selection {
+  background: rgba(99, 102, 241, 0.3);
+}
