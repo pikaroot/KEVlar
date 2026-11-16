@@ -7,3 +7,8 @@ next-env.d.ts
 .env*.local
 .DS_Store
 npm-debug.log*
+
+# Env files — never commit secrets (only the template is tracked)
+.env
+.env.*
+!.env.example

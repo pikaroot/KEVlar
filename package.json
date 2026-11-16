@@ -2,6 +2,7 @@
   "name": "kevlar",
   "version": "1.0.0",
   "private": true,
+  "license": "MIT",
   "description": "KEVlar — CVE, CISA KEV & Lifecycle Intelligence Finder",
   "engines": {
     "node": ">=18.18"

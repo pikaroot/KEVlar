@@ -11,7 +11,7 @@ one-click report-ready copy formats.
 
 ## Stack
 
-- **Next.js 14** (App Router) with server-side API proxying
+- **Next.js 15** (App Router) with server-side API proxying
 - **TypeScript** (strict)
 - **Tailwind CSS** (dark, offensive-security aesthetic)
 - **TanStack Query v5** for client caching, dedup, and loading skeletons
@@ -20,19 +20,13 @@ one-click report-ready copy formats.
 
 ## Getting started
 
-> **Node version note (this machine):** the system `node` at `/usr/bin/node`
-> (Kali's packaged 20.19.5) is broken — its bundled `undici` references
-> `webidl.util.markAsUncloneable`, which the build omits, so `new Headers()` /
-> `fetch` throw and both `next build` and runtime API calls fail. A working
-> official Node 22 is installed at
-> `/home/kali/.local/node/node-v22.11.0-linux-x64/bin`. Put it first on `PATH`:
->
-> ```bash
-> export PATH="/home/kali/.local/node/node-v22.11.0-linux-x64/bin:$PATH"
-> node -v   # should print v22.11.0
-> ```
->
-> (Or install any Node ≥18.18 from nodejs.org / nvm — see `.nvmrc`.)
+Requires **Node.js ≥ 18.18** (22 recommended — see `.nvmrc`; with nvm, run `nvm use`).
+Or skip Node entirely and use [Docker](#docker-deployment).
+
+> **Troubleshooting:** some distro-packaged Node builds (e.g. Kali's Node 20.19.5)
+> ship a broken bundled `undici`, causing `fetch` / `new Headers()` to throw during
+> `next build` and at runtime. If you see `markAsUncloneable` errors, install an
+> official Node build from [nodejs.org](https://nodejs.org) or via nvm.
 
 ```bash
 npm install
@@ -198,3 +192,7 @@ Add entries to `VULN_ALIASES` in `src/lib/alias-dictionary.ts`. Reverse lookup
   for reliable, higher-volume lookups.
 - All external fetches run server-side through the `/api/lookup` route (no CORS
   issues, API key never reaches the browser).
+
+## License
+
+[MIT](LICENSE). Vulnerability data comes from [NIST NVD](https://nvd.nist.gov/), [CISA KEV](https://www.cisa.gov/known-exploited-vulnerabilities-catalog), and [endoflife.date](https://endoflife.date); this product uses the NVD API but is not endorsed or certified by the NVD.

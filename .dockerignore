@@ -23,7 +23,7 @@ docker-compose.yml
 
 # Docs & misc that aren't needed to build/run
 README.md
-cve_kev_finder_specification.md
+docs/
 *.md
 npm-debug.log*
 .DS_Store
