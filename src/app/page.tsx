@@ -58,11 +58,11 @@ export default function Home() {
       <div className="relative mx-auto flex max-w-3xl flex-col px-4 py-10 sm:py-16">
         {/* Hero */}
         <header className="mb-8 text-center">
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-zinc-800 bg-zinc-900/60 px-3 py-1 text-xs font-medium text-zinc-400">
+          <div className="mb-4 inline-flex items-center gap-2 rounded border border-zinc-800 bg-zinc-900/60 px-3 py-1 font-mono text-xs font-medium text-zinc-400">
             <Terminal className="h-3.5 w-3.5 text-indigo-400" />
             CVE · CISA KEV · Lifecycle Intelligence
           </div>
-          <h1 className="bg-gradient-to-b from-white to-zinc-400 bg-clip-text pb-1.5 text-4xl font-bold leading-[1.15] tracking-tight text-transparent sm:text-5xl">
+          <h1 className="pb-1.5 text-4xl font-light leading-[1.1] tracking-[-0.04em] text-zinc-100 sm:text-5xl">
             KEVlar
           </h1>
           <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-zinc-400 sm:text-base">

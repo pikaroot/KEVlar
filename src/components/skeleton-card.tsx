@@ -7,8 +7,8 @@ export function SkeletonCard() {
         <div className="h-8 w-8 rounded bg-zinc-800" />
       </div>
       <div className="mt-3 flex gap-2">
-        <div className="h-5 w-28 rounded-full bg-zinc-800" />
-        <div className="h-5 w-32 rounded-full bg-zinc-800" />
+        <div className="h-5 w-28 rounded bg-zinc-800" />
+        <div className="h-5 w-32 rounded bg-zinc-800" />
       </div>
       <div className="mt-5 space-y-2">
         <div className="h-3 w-full rounded bg-zinc-800" />

@@ -56,7 +56,7 @@ export function CvssPopover({
         aria-expanded={open}
         aria-haspopup={hasMore}
         className={cn(
-          "inline-flex items-center gap-1.5 rounded-full border px-2.5 py-0.5 font-mono text-xs font-semibold tracking-wide transition-colors",
+          "inline-flex items-center gap-1.5 rounded border px-2 py-0.5 font-mono text-xs font-medium tracking-wide transition-colors",
           severityClasses(primary.severity),
           hasMore && "cursor-pointer hover:brightness-125"
         )}

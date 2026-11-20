@@ -52,7 +52,7 @@ export function EolBanner({ eol }: { eol: EolStatus }) {
               {eol.cycle ? ` · ${eol.product} ${eol.cycle}` : ` · ${eol.product}`}
             </span>
             {eol.level === "eol" && eol.eolDate && (
-              <span className="rounded-full bg-black/30 px-2 py-0.5 font-mono text-[11px]">
+              <span className="rounded bg-black/30 px-2 py-0.5 font-mono text-[11px]">
                 EOL {eol.eolDate}
               </span>
             )}

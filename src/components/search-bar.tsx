@@ -150,7 +150,7 @@ export function SearchBar({
             disabled={isLoading || !value.trim()}
             className={cn(
               "inline-flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold transition",
-              "bg-indigo-600 text-white hover:bg-indigo-500",
+              "bg-indigo-500 text-zinc-950 hover:bg-indigo-400",
               "disabled:cursor-not-allowed disabled:opacity-50"
             )}
           >
@@ -223,7 +223,7 @@ export function SearchBar({
               submit(chip.query);
             }}
             disabled={isLoading}
-            className="rounded-full border border-zinc-800 bg-zinc-900/60 px-3 py-1 font-mono text-xs text-zinc-400 transition hover:border-indigo-500/40 hover:bg-indigo-500/10 hover:text-indigo-300 disabled:opacity-50"
+            className="rounded border border-zinc-800 bg-zinc-900/60 px-3 py-1 font-mono text-xs text-zinc-400 transition hover:border-indigo-500/40 hover:bg-indigo-500/10 hover:text-indigo-300 disabled:opacity-50"
           >
             {chip.label}
           </button>

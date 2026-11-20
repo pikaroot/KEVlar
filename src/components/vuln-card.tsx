@@ -36,11 +36,11 @@ export function VulnCard({ vuln }: { vuln: VulnerabilityRecord }) {
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div className="min-w-0">
           <div className="flex flex-wrap items-center gap-2">
-            <h2 className="font-mono text-xl font-bold tracking-tight text-zinc-100">
+            <h2 className="font-mono text-xl font-semibold tracking-tight text-zinc-100">
               {vuln.cveId}
             </h2>
             {vuln.brandedName && (
-              <Badge className="border-purple-500/30 bg-purple-500/10 text-purple-300">
+              <Badge className="border-zinc-700 bg-zinc-800/60 text-zinc-300">
                 {vuln.brandedName}
               </Badge>
             )}
