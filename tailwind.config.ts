@@ -10,7 +10,7 @@ const config: Config = {
   theme: {
     extend: {
       // "Quiet terminal" theme, shared with pikaroot.github.io: the zinc scale
-      // becomes graphite and indigo becomes the one phosphor-green accent, so
+      // becomes graphite and indigo becomes the accent (phosphor green, rotating daily), so
       // every existing utility class picks the new palette up unchanged.
       colors: {
         zinc: {
@@ -26,19 +26,13 @@ const config: Config = {
           900: "#191c1b",
           950: "#0c0d0d",
         },
-        indigo: {
-          50: "#effbf4",
-          100: "#d8f5e4",
-          200: "#b3ebcb",
-          300: "#8ddbb0",
-          400: "#76d19f",
-          500: "#5fc98f",
-          600: "#48b87b",
-          700: "#349763",
-          800: "#2a7650",
-          900: "#215c3f",
-          950: "#123523",
-        },
+        // Driven by CSS variables so the accent can rotate daily (globals.css).
+        indigo: Object.fromEntries(
+          [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950].map((k) => [
+            k,
+            `rgb(var(--acc-${k}) / <alpha-value>)`,
+          ]),
+        ),
       },
       borderRadius: {
         DEFAULT: "3px",

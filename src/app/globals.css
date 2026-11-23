@@ -2,6 +2,66 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Accent scale behind Tailwind's `indigo-*` (see tailwind.config.ts).
+   Daily rotation green -> orange -> blue -> violet, same as pikaroot.github.io;
+   html[data-accent] is set before first paint by the script in layout.tsx. */
+:root {
+  --acc-50: 239 251 244;
+  --acc-100: 216 245 228;
+  --acc-200: 179 235 203;
+  --acc-300: 141 219 176;
+  --acc-400: 118 209 159;
+  --acc-500: 95 201 143;
+  --acc-600: 72 184 123;
+  --acc-700: 52 151 99;
+  --acc-800: 42 118 80;
+  --acc-900: 33 92 63;
+  --acc-950: 18 53 35;
+}
+
+html[data-accent="orange"] {
+  --acc-50: 254 244 237;
+  --acc-100: 252 232 215;
+  --acc-200: 249 210 179;
+  --acc-300: 246 189 143;
+  --acc-400: 243 168 107;
+  --acc-500: 240 149 74;
+  --acc-600: 217 135 68;
+  --acc-700: 182 114 58;
+  --acc-800: 147 93 48;
+  --acc-900: 119 76 40;
+  --acc-950: 73 48 27;
+}
+
+html[data-accent="blue"] {
+  --acc-50: 238 246 254;
+  --acc-100: 219 236 252;
+  --acc-200: 186 219 249;
+  --acc-300: 153 202 246;
+  --acc-400: 120 184 243;
+  --acc-500: 90 169 240;
+  --acc-600: 82 153 217;
+  --acc-700: 70 129 182;
+  --acc-800: 57 105 148;
+  --acc-900: 47 86 120;
+  --acc-950: 31 54 74;
+}
+
+html[data-accent="violet"] {
+  --acc-50: 247 244 254;
+  --acc-100: 238 230 252;
+  --acc-200: 223 207 249;
+  --acc-300: 207 184 246;
+  --acc-400: 192 161 243;
+  --acc-500: 178 140 240;
+  --acc-600: 161 127 217;
+  --acc-700: 136 107 182;
+  --acc-800: 110 88 148;
+  --acc-900: 90 72 120;
+  --acc-950: 56 46 74;
+}
+
+
 :root {
   color-scheme: dark;
 }
@@ -13,7 +73,7 @@ html {
 body {
   background-color: #0c0d0d; /* graphite */
   background-image:
-    radial-gradient(60rem 40rem at 50% -10%, rgba(95, 201, 143, 0.05), transparent 70%),
+    radial-gradient(60rem 40rem at 50% -10%, rgb(var(--acc-500) / 0.05), transparent 70%),
     linear-gradient(rgba(231, 229, 224, 0.03) 1px, transparent 1px),
     linear-gradient(90deg, rgba(231, 229, 224, 0.03) 1px, transparent 1px);
   background-size: 100% 100%, 44px 44px, 44px 44px;
@@ -30,5 +90,5 @@ body {
 }
 
 ::selection {
-  background: rgba(95, 201, 143, 0.22);
+  background: rgb(var(--acc-500) / 0.22);
 }
